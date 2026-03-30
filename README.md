@@ -18,7 +18,7 @@ Track B: Mobile Specialist
 ## Setup Instructions
 1. **Clone the repository**:
    ```bash
-   git clone [REPO_URL]
+   git clone https://github.com/deshgautam03/flodo.git
    ```
 2. **Navigate to project folder**:
    ```bash
