@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Flodo - Tasks</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(34, 35, 62, 0.6);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #7e51ff 0%, #b6a0ff 100%);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary": "#ff96bb",
+                        "on-tertiary-container": "#59002e",
+                        "surface-container-highest": "#22233e",
+                        "primary-fixed-dim": "#9c7eff",
+                        "surface-bright": "#282947",
+                        "outline": "#73738b",
+                        "error-container": "#a70138",
+                        "primary-container": "#a98fff",
+                        "tertiary-fixed": "#ff8db6",
+                        "on-error": "#490013",
+                        "on-surface-variant": "#a9a9c2",
+                        "surface-container": "#16172e",
+                        "secondary-fixed": "#e1c7ff",
+                        "error": "#ff6e84",
+                        "on-secondary": "#36006c",
+                        "on-primary-fixed": "#000000",
+                        "on-secondary-container": "#e0c5ff",
+                        "on-background": "#e4e3fe",
+                        "surface-container-low": "#101126",
+                        "secondary": "#bc8df9",
+                        "error-dim": "#d73357",
+                        "on-secondary-fixed": "#471580",
+                        "on-secondary-fixed-variant": "#65389f",
+                        "on-tertiary-fixed": "#37001a",
+                        "surface-container-high": "#1c1d36",
+                        "on-primary": "#340090",
+                        "primary": "#b6a0ff",
+                        "primary-dim": "#7e51ff",
+                        "surface-container-lowest": "#000000",
+                        "on-primary-fixed-variant": "#32008a",
+                        "secondary-dim": "#b688f3",
+                        "inverse-surface": "#fbf8ff",
+                        "secondary-container": "#5b2d94",
+                        "surface-variant": "#22233e",
+                        "on-tertiary": "#690939",
+                        "tertiary-dim": "#ee77a3",
+                        "outline-variant": "#46465b",
+                        "on-primary-container": "#280072",
+                        "surface": "#0b0c1f",
+                        "surface-dim": "#0b0c1f",
+                        "on-surface": "#e4e3fe",
+                        "inverse-primary": "#6834eb",
+                        "tertiary-fixed-dim": "#f57ca9",
+                        "on-tertiary-fixed-variant": "#70103e",
+                        "inverse-on-surface": "#535369",
+                        "surface-tint": "#b6a0ff",
+                        "primary-fixed": "#a98fff",
+                        "tertiary-container": "#fb81ae",
+                        "secondary-fixed-dim": "#d6b6ff",
+                        "on-error-container": "#ffb2b9",
+                        "background": "#0b0c1f"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface min-h-screen pb-32">
+<!-- Top App Bar -->
+<header class="bg-[#101126] shadow-[0_12_24_-4_rgba(124,77,255,0.08)] docked full-width top-0 sticky z-40">
+<div class="flex justify-between items-center w-full px-6 py-4">
+<div class="flex items-center gap-3">
+<img alt="User profile photo" class="w-10 h-10 rounded-full border-2 border-primary-dim/20" data-alt="A professional high-end studio portrait of a young creative professional with soft cinematic lighting on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvFAWW9FoBUIqisOFHZBc42TMT7Q2DWg7DFO_7_zSAh7NUVcDXNeC4oGmXfHxG72eSuGCRRUsuX1pSRDd3wCdszbj7D7H0xiB9neAbt0_txMub5PbB-fwa7SDfEmkJL4O7WbBVySStN8Xc7HjEZxFwnav27MUvq9lGpP3ee7qKsZiE5udzKKp5FrdXTUxQ69gUyIDrg47JphAhmXCSwxNruRyBj9jgcBh-xatIOYS-e7YNAzXjbMyKDrlXZ2-jE0VuutbDw42_Ll0"/>
+<span class="text-xl font-extrabold text-slate-100 font-['Manrope'] tracking-tight">Flodo</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-slate-400 hover:bg-[#16172e] transition-colors p-2 rounded-full active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+</div>
+</div>
+</header>
+<main class="px-6 py-6 space-y-8">
+<!-- Search Section -->
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">search</span>
+</div>
+<input class="w-full bg-surface-container-lowest border border-outline-variant/15 rounded-full py-4 pl-12 pr-6 focus:outline-none focus:border-primary transition-all text-sm font-medium placeholder:text-on-surface-variant/50" placeholder="Search tasks..." type="text"/>
+</div>
+<!-- Filter Row -->
+<section>
+<div class="flex items-center gap-3 overflow-x-auto pb-2 scrollbar-hide">
+<button class="px-6 py-2.5 bg-primary text-on-primary rounded-full text-xs font-semibold tracking-wide shadow-lg shadow-primary/20 transition-all active:scale-95">All</button>
+<button class="px-6 py-2.5 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-semibold tracking-wide hover:bg-surface-container-high transition-all active:scale-95 border border-outline-variant/10">To-Do</button>
+<button class="px-6 py-2.5 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-semibold tracking-wide hover:bg-surface-container-high transition-all active:scale-95 border border-outline-variant/10">In Progress</button>
+<button class="px-6 py-2.5 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-semibold tracking-wide hover:bg-surface-container-high transition-all active:scale-95 border border-outline-variant/10">Done</button>
+</div>
+</section>
+<!-- Task List Section -->
+<section class="space-y-6">
+<h2 class="font-headline text-2xl font-bold tracking-tight text-on-surface px-1">Today's Focus</h2>
+<div class="grid gap-6">
+<!-- Task Card: In Progress -->
+<div class="group relative bg-surface-container-low p-6 rounded-lg hover:bg-surface-container transition-all active:scale-[0.99] duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-secondary-container/30 text-secondary text-[10px] font-bold uppercase tracking-widest rounded-full">In Progress</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">more_horiz</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-2 leading-tight">Design System Overhaul</h3>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-6">Implementing the Fluid Luminescence framework across all mobile screens.</p>
+<div class="flex items-center gap-2 text-primary-dim/80">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+<span class="text-[11px] font-bold uppercase tracking-wider">Due Oct 24, 2023</span>
+</div>
+</div>
+<!-- Task Card: BLOCKED -->
+<div class="relative bg-surface-container-low/50 p-6 rounded-lg border border-outline-variant/5">
+<div class="absolute inset-0 bg-surface/40 backdrop-blur-[1px] rounded-lg z-10 flex items-center justify-center">
+<div class="bg-surface-container-highest/90 border border-tertiary/20 px-4 py-2 rounded-full flex items-center gap-2 shadow-xl">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span class="text-tertiary text-xs font-bold uppercase tracking-widest">Blocked</span>
+</div>
+</div>
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-outline-variant/20 text-on-surface-variant text-[10px] font-bold uppercase tracking-widest rounded-full">To-Do</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface/40 mb-2">Backend API Integration</h3>
+<p class="text-on-surface-variant/40 text-sm mb-4">Sync local data with the production postgres environment.</p>
+<div class="flex items-center gap-2 text-error-dim/80">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span class="text-[11px] font-bold uppercase tracking-wider">Blocked by: Database Migration</span>
+</div>
+</div>
+<!-- Task Card: To-Do -->
+<div class="group bg-surface-container-low p-6 rounded-lg hover:bg-surface-container transition-all active:scale-[0.99] duration-300">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-primary-container/20 text-primary-fixed text-[10px] font-bold uppercase tracking-widest rounded-full">To-Do</span>
+<span class="material-symbols-outlined text-on-surface-variant text-lg">more_horiz</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface mb-2 leading-tight">Stakeholder Review</h3>
+<p class="text-on-surface-variant text-sm line-clamp-1 mb-6">Prepare the presentation for the Q4 roadmap alignment.</p>
+<div class="flex items-center gap-2 text-on-surface-variant/60">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+<span class="text-[11px] font-bold uppercase tracking-wider">Due Oct 26, 2023</span>
+</div>
+</div>
+<!-- Task Card: Done -->
+<div class="group bg-surface-container-low/60 p-6 rounded-lg transition-all border border-transparent">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 bg-tertiary/20 text-tertiary-dim text-[10px] font-bold uppercase tracking-widest rounded-full">Done</span>
+<span class="material-symbols-outlined text-tertiary-dim text-lg">check_circle</span>
+</div>
+<h3 class="text-lg font-bold text-on-surface/50 line-through mb-2">Icon Library Selection</h3>
+<p class="text-on-surface-variant/40 text-sm line-clamp-1 mb-6">Audit material symbols and font-awesome for consistency.</p>
+<div class="flex items-center gap-2 text-on-surface-variant/30">
+<span class="material-symbols-outlined text-sm">calendar_month</span>
+<span class="text-[11px] font-bold uppercase tracking-wider">Completed Oct 21</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- FAB -->
+<button class="fixed bottom-28 right-6 w-16 h-16 primary-gradient rounded-2xl shadow-[0_12px_24px_-4px_rgba(124,77,255,0.4)] flex items-center justify-center text-on-primary-fixed active:scale-90 transition-all z-50">
+<span class="material-symbols-outlined text-3xl font-bold" data-icon="add">add</span>
+</button>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] max-w-md z-50 glass-panel h-20 rounded-xl shadow-[0_12_24_-4_rgba(124,77,255,0.08)] flex justify-around items-center px-4">
+<a class="flex flex-col items-center justify-center text-[#7C4DFF] bg-violet-500/10 rounded-full px-4 py-1 active:scale-[0.98] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-0.5">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-violet-300 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-0.5">Search</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-violet-300 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-0.5">Add</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-violet-300 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-0.5">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 p-2 hover:text-violet-300 transition-all active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-0.5">Profile</span>
+</a>
+</nav>
+</body></html>

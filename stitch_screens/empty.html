@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Flodo - No Tasks Yet</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#e4e3fe",
+              "tertiary-container": "#fb81ae",
+              "surface-container-highest": "#22233e",
+              "inverse-on-surface": "#535369",
+              "secondary-container": "#5b2d94",
+              "surface-tint": "#b6a0ff",
+              "on-tertiary-fixed-variant": "#70103e",
+              "on-tertiary-container": "#59002e",
+              "on-error-container": "#ffb2b9",
+              "tertiary-dim": "#ee77a3",
+              "on-secondary-fixed-variant": "#65389f",
+              "tertiary-fixed": "#ff8db6",
+              "inverse-primary": "#6834eb",
+              "surface-dim": "#0b0c1f",
+              "surface-container": "#16172e",
+              "secondary-dim": "#b688f3",
+              "error": "#ff6e84",
+              "tertiary-fixed-dim": "#f57ca9",
+              "on-primary-container": "#280072",
+              "primary-fixed-dim": "#9c7eff",
+              "background": "#0b0c1f",
+              "primary-container": "#a98fff",
+              "surface-variant": "#22233e",
+              "on-secondary": "#36006c",
+              "on-tertiary-fixed": "#37001a",
+              "on-surface-variant": "#a9a9c2",
+              "on-secondary-fixed": "#471580",
+              "inverse-surface": "#fbf8ff",
+              "on-primary-fixed-variant": "#32008a",
+              "secondary-fixed-dim": "#d6b6ff",
+              "secondary-fixed": "#e1c7ff",
+              "on-primary": "#340090",
+              "primary-dim": "#7e51ff",
+              "surface-container-lowest": "#000000",
+              "outline": "#73738b",
+              "surface-bright": "#282947",
+              "surface-container-high": "#1c1d36",
+              "error-dim": "#d73357",
+              "surface": "#0b0c1f",
+              "secondary": "#bc8df9",
+              "on-background": "#e4e3fe",
+              "on-error": "#490013",
+              "tertiary": "#ff96bb",
+              "primary": "#b6a0ff",
+              "surface-container-low": "#101126",
+              "outline-variant": "#46465b",
+              "error-container": "#a70138",
+              "on-primary-fixed": "#000000",
+              "primary-fixed": "#a98fff",
+              "on-secondary-container": "#e0c5ff",
+              "on-tertiary": "#690939"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #0b0c1f;
+        color: #e4e3fe;
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface selection:bg-primary/30 selection:text-primary min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#101126] shadow-none flex items-center justify-between px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<button class="text-[#a9a9c2] hover:bg-[#16172e] transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h1 class="text-[#e4e3fe] font-black tracking-widest uppercase font-['Manrope'] tracking-tight text-xl">Flodo</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-[#a9a9c2] hover:bg-[#16172e] transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/20 active:scale-95 transition-transform duration-200 cursor-pointer">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="Close-up portrait of a professional user profile placeholder with a clean, modern aesthetic and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpwDrGXKItNtmSpR2YUO70CC8CLFGLqsmsjo1CLuIQdnr8F7V9pwInQ1VEOiQcmu46nIQgW-uCnfndMvCk1XMgz1Zr1CSaTJhtrWtWlD0kJI_8GJS2P4QL6gyP2bL608EgAXQ_jJynzvMDiKpUfvP09s4fs5qZOEQPCrjTtOZdpYxghJaWy0eY0XzVi4Aq7kTgqa3KqifzOUi5x2r1Gmqs7s3VIWh9A0dpKjljUJjZ24H1918pTHwvMOlY1g9_Wtiealnethfbq-E"/>
+</div>
+</div>
+</header>
+<!-- Main Canvas (Empty State) -->
+<main class="flex-grow flex flex-col items-center justify-center px-8 pt-16 pb-24 text-center">
+<!-- Editorial Empty State Illustration -->
+<div class="relative mb-10 group">
+<!-- Background Glow -->
+<div class="absolute inset-0 bg-primary/20 blur-[60px] rounded-full scale-110 opacity-50"></div>
+<!-- Glass Icon Container -->
+<div class="relative w-48 h-48 bg-surface-container/40 backdrop-blur-2xl rounded-lg flex items-center justify-center border border-outline-variant/10 shadow-[0_12px_24px_-4px_rgba(124,77,255,0.08)]">
+<div class="relative">
+<span class="material-symbols-outlined text-[100px] text-primary" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<div class="absolute -top-2 -right-2 w-10 h-10 bg-tertiary-dim rounded-full flex items-center justify-center shadow-lg border-4 border-surface">
+<span class="material-symbols-outlined text-on-tertiary text-xl" data-icon="add">add</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Typography Content -->
+<h2 class="font-headline text-3xl font-bold text-on-surface mb-3 tracking-tight">No Tasks Yet</h2>
+<p class="font-body text-on-surface-variant max-w-[280px] leading-relaxed opacity-70 mb-10">Tap the + button to create your first task and start your journey.</p>
+<!-- CTA Button -->
+<button class="group flex items-center gap-3 px-8 py-4 rounded-DEFAULT border border-primary/40 hover:border-primary text-primary font-medium transition-all active:scale-95 hover:bg-primary/5">
+<span class="material-symbols-outlined" data-icon="add_task">add_task</span>
+<span>Create Task</span>
+</button>
+</main>
+<!-- FAB (Floating Action Button) - Rendered per Context -->
+<button class="fixed right-6 bottom-24 w-16 h-16 bg-gradient-to-br from-[#7e51ff] to-[#b6a0ff] text-white rounded-full flex items-center justify-center shadow-[0_12px_24px_-4px_rgba(124,77,255,0.3)] active:scale-90 transition-transform z-40">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] rounded-[3rem] z-50 bg-[#16172e]/60 backdrop-blur-xl flex justify-around items-center p-2 shadow-[0_12px_24px_-4px_rgba(124,77,255,0.08)] no-border">
+<!-- Tasks (Active) -->
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#7e51ff] to-[#b6a0ff] text-white rounded-full px-6 py-2 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="assignment" style="font-variation-settings: 'FILL' 1;">assignment</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-0.5">Tasks</span>
+</a>
+<!-- Calendar -->
+<a class="flex flex-col items-center justify-center text-[#a9a9c2] opacity-70 hover:opacity-100 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-0.5">Calendar</span>
+</a>
+<!-- Focus -->
+<a class="flex flex-col items-center justify-center text-[#a9a9c2] opacity-70 hover:opacity-100 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="adjust">adjust</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-0.5">Focus</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-[#a9a9c2] opacity-70 hover:opacity-100 transition-transform active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider mt-0.5">Settings</span>
+</a>
+</nav>
+</body></html>

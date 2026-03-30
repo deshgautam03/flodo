@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#5b2d94",
+              "on-primary": "#340090",
+              "primary": "#b6a0ff",
+              "surface-container-low": "#101126",
+              "on-primary-fixed": "#000000",
+              "on-error-container": "#ffb2b9",
+              "on-secondary-fixed": "#471580",
+              "secondary-dim": "#b688f3",
+              "surface-container-lowest": "#000000",
+              "error-dim": "#d73357",
+              "inverse-primary": "#6834eb",
+              "on-tertiary-container": "#59002e",
+              "on-tertiary": "#690939",
+              "tertiary-fixed-dim": "#f57ca9",
+              "primary-fixed": "#a98fff",
+              "surface": "#0b0c1f",
+              "tertiary": "#ff96bb",
+              "on-tertiary-fixed-variant": "#70103e",
+              "secondary-fixed-dim": "#d6b6ff",
+              "error-container": "#a70138",
+              "outline": "#73738b",
+              "on-tertiary-fixed": "#37001a",
+              "on-error": "#490013",
+              "secondary": "#bc8df9",
+              "on-secondary-fixed-variant": "#65389f",
+              "on-primary-container": "#280072",
+              "surface-container-high": "#1c1d36",
+              "inverse-on-surface": "#535369",
+              "on-surface-variant": "#a9a9c2",
+              "error": "#ff6e84",
+              "on-surface": "#e4e3fe",
+              "surface-dim": "#0b0c1f",
+              "surface-bright": "#282947",
+              "tertiary-dim": "#ee77a3",
+              "primary-container": "#a98fff",
+              "on-background": "#e4e3fe",
+              "background": "#0b0c1f",
+              "on-secondary": "#36006c",
+              "on-secondary-container": "#e0c5ff",
+              "surface-container-highest": "#22233e",
+              "inverse-surface": "#fbf8ff",
+              "primary-fixed-dim": "#9c7eff",
+              "secondary-fixed": "#e1c7ff",
+              "primary-dim": "#7e51ff",
+              "on-primary-fixed-variant": "#32008a",
+              "tertiary-container": "#fb81ae",
+              "surface-container": "#16172e",
+              "outline-variant": "#46465b",
+              "surface-tint": "#b6a0ff",
+              "tertiary-fixed": "#ff8db6",
+              "surface-variant": "#22233e"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        .skeleton-shimmer {
+            background: linear-gradient(90deg, #16172e 25%, #22233e 50%, #16172e 75%);
+            background-size: 200% 100%;
+            animation: shimmer 2s infinite linear;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .loading-spinner {
+            animation: spin 1s linear infinite;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-[#0b0c1f] shadow-[0_12px_24px_-4px_rgba(124,77,255,0.08)]">
+<div class="flex items-center justify-between px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-[#7C4DFF] active:scale-95 transition-transform duration-200">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="font-['Manrope'] text-[#e4e3fe] tracking-wide font-bold text-xl">New Task</h1>
+</div>
+<!-- Trailing Action: Save (Loading State) -->
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-highest text-on-surface-variant cursor-not-allowed opacity-60" disabled="">
+<span class="material-symbols-outlined loading-spinner text-sm">progress_activity</span>
+<span class="font-label font-semibold">Save</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 w-full max-w-2xl mx-auto px-6 py-8 space-y-10">
+<!-- Input Section: Title (Skeleton) -->
+<section class="space-y-4">
+<div class="h-4 w-24 bg-surface-container-highest rounded-full opacity-50"></div>
+<div class="w-full h-16 rounded-xl skeleton-shimmer bg-surface-container-lowest border border-outline-variant/15"></div>
+</section>
+<!-- Bento Layout for Task Details -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Due Date Skeleton -->
+<div class="p-6 rounded-lg bg-surface-container-low space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">calendar_today</span>
+<div class="h-3 w-16 bg-surface-container-highest rounded-full"></div>
+</div>
+<div class="h-10 w-full skeleton-shimmer rounded-DEFAULT"></div>
+</div>
+<!-- Priority Skeleton -->
+<div class="p-6 rounded-lg bg-surface-container-low space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-sm">flag</span>
+<div class="h-3 w-16 bg-surface-container-highest rounded-full"></div>
+</div>
+<div class="flex gap-2">
+<div class="h-8 w-16 skeleton-shimmer rounded-full"></div>
+<div class="h-8 w-16 skeleton-shimmer rounded-full"></div>
+<div class="h-8 w-16 skeleton-shimmer rounded-full"></div>
+</div>
+</div>
+</div>
+<!-- Description Skeleton -->
+<section class="space-y-4">
+<div class="flex items-center justify-between">
+<div class="h-4 w-32 bg-surface-container-highest rounded-full opacity-50"></div>
+<div class="h-3 w-20 bg-surface-container-highest rounded-full opacity-30"></div>
+</div>
+<div class="w-full h-40 rounded-xl skeleton-shimmer bg-surface-container-lowest border border-outline-variant/15"></div>
+</section>
+<!-- Tags Skeleton -->
+<section class="space-y-4">
+<div class="h-4 w-20 bg-surface-container-highest rounded-full opacity-50"></div>
+<div class="flex flex-wrap gap-3">
+<div class="h-10 w-24 skeleton-shimmer rounded-full"></div>
+<div class="h-10 w-32 skeleton-shimmer rounded-full"></div>
+<div class="h-10 w-10 skeleton-shimmer rounded-full"></div>
+</div>
+</section>
+<!-- Editorial Task Meta (Asymmetric) -->
+<div class="pt-8 flex justify-between items-end opacity-20">
+<div class="space-y-2">
+<div class="h-3 w-40 bg-on-surface-variant rounded-full"></div>
+<div class="h-3 w-24 bg-on-surface-variant rounded-full"></div>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary/20"></div>
+</div>
+</main>
+<!-- BottomNavBar (Suppressed due to task-focused context, but template structure for alignment) -->
+<!-- Suppressed per rules: Task-focused sub-page with back action -->
+<!-- Empty Spacer for Bottom Glass Rail area to maintain layout balance -->
+<div class="h-24"></div>
+<!-- Floating UI Decoration (Subtle Glow) -->
+<div class="fixed top-1/4 -right-20 w-64 h-64 bg-primary/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="fixed bottom-0 -left-20 w-80 h-80 bg-secondary-container/10 blur-[150px] rounded-full pointer-events-none"></div>
+</body></html>

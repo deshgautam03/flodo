@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#e4e3fe",
+              "tertiary-container": "#fb81ae",
+              "surface-container-highest": "#22233e",
+              "inverse-on-surface": "#535369",
+              "secondary-container": "#5b2d94",
+              "surface-tint": "#b6a0ff",
+              "on-tertiary-fixed-variant": "#70103e",
+              "on-tertiary-container": "#59002e",
+              "on-error-container": "#ffb2b9",
+              "tertiary-dim": "#ee77a3",
+              "on-secondary-fixed-variant": "#65389f",
+              "tertiary-fixed": "#ff8db6",
+              "inverse-primary": "#6834eb",
+              "surface-dim": "#0b0c1f",
+              "surface-container": "#16172e",
+              "secondary-dim": "#b688f3",
+              "error": "#ff6e84",
+              "tertiary-fixed-dim": "#f57ca9",
+              "on-primary-container": "#280072",
+              "primary-fixed-dim": "#9c7eff",
+              "background": "#0b0c1f",
+              "primary-container": "#a98fff",
+              "surface-variant": "#22233e",
+              "on-secondary": "#36006c",
+              "on-tertiary-fixed": "#37001a",
+              "on-surface-variant": "#a9a9c2",
+              "on-secondary-fixed": "#471580",
+              "inverse-surface": "#fbf8ff",
+              "on-primary-fixed-variant": "#32008a",
+              "secondary-fixed-dim": "#d6b6ff",
+              "secondary-fixed": "#e1c7ff",
+              "on-primary": "#340090",
+              "primary-dim": "#7e51ff",
+              "surface-container-lowest": "#000000",
+              "outline": "#73738b",
+              "surface-bright": "#282947",
+              "surface-container-high": "#1c1d36",
+              "error-dim": "#d73357",
+              "surface": "#0b0c1f",
+              "secondary": "#bc8df9",
+              "on-background": "#e4e3fe",
+              "on-error": "#490013",
+              "tertiary": "#ff96bb",
+              "primary": "#b6a0ff",
+              "surface-container-low": "#101126",
+              "outline-variant": "#46465b",
+              "error-container": "#a70138",
+              "on-primary-fixed": "#000000",
+              "primary-fixed": "#a98fff",
+              "on-secondary-container": "#e0c5ff",
+              "on-tertiary": "#690939",
+              "amber-accent": "#FFC107"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0b0c1f;
+            color: #e4e3fe;
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="dark overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0b0c1f] dark:bg-[#0b0c1f] shadow-none">
+<div class="flex items-center justify-between px-6 h-16 w-full bg-[#101126]">
+<div class="flex items-center gap-4">
+<button class="text-[#a9a9c2] hover:bg-[#16172e] transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="text-[#e4e3fe] font-black tracking-widest uppercase font-['Manrope'] text-xl">Flodo</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-[#a9a9c2] hover:bg-[#16172e] transition-colors active:scale-95 duration-200 p-2 rounded-full">
+<span class="material-symbols-outlined">search</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/30">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="High-quality professional portrait of a person in a minimalist dark environment with subtle purple backlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaczW6_ySrmXzjjYXhrDIZbbUVR-8in7EpYl1fOki2LcZ8mJ2K0ytygjABPB_sJm1ePb_r0sWL4lhkeGj-tK5g99NxZlkuWkQ4ATkXubFR1mbRSjru1HUTz_7cgEYgAmSUcZgAWw8WU5F5gM6Zlxge1-2AnBQT47ePhqav0osLpbLsCmn11f9UxszfnsWwjXrmuL6WYP5HPnnLZ1vKesOY2n58bqBUwT_co5SlUgJtvtf3mzpe6tio-XcZczfF5qLlCO5CXPIunoI"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-16 pb-32 min-h-screen">
+<!-- DRAFT RECOVERY BANNER -->
+<div class="bg-amber-accent px-6 py-4 flex items-start gap-4 animate-in slide-in-from-top duration-500">
+<div class="mt-1">
+<span class="material-symbols-outlined text-[#0b0c1f]">edit_note</span>
+</div>
+<div class="flex-1">
+<p class="text-[#0b0c1f] font-semibold text-sm font-body">You have an unsaved draft. Continue editing?</p>
+<div class="mt-3 flex gap-3">
+<button class="bg-[#0b0c1f] text-white px-5 py-2 rounded-full text-xs font-bold transition-transform active:scale-95">
+                        Continue
+                    </button>
+<button class="text-[#0b0c1f] px-4 py-2 rounded-full text-xs font-bold border border-[#0b0c1f]/20 hover:bg-[#0b0c1f]/10 transition-colors">
+                        Discard
+                    </button>
+</div>
+</div>
+</div>
+<!-- Task Creation Form (Partially Visible) -->
+<div class="px-6 py-8">
+<div class="flex flex-col gap-8">
+<div class="space-y-2">
+<h2 class="text-3xl font-headline font-bold text-on-surface tracking-tight">New Project</h2>
+<p class="text-on-surface-variant text-sm">Drafting your next big milestone...</p>
+</div>
+<!-- Bento Grid Layout for Creation Form -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Title Input -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/15">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2 block">Project Title</label>
+<input class="bg-transparent border-none text-xl font-headline font-bold text-on-surface w-full p-0 focus:ring-0" placeholder="Enter title..." type="text" value="Obsidian Design Framework"/>
+</div>
+<!-- Category Chip Selection -->
+<div class="bg-surface-container-low p-6 rounded-lg">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-4 block">Focus Area</label>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary text-on-primary px-4 py-1.5 rounded-full text-xs font-medium">Design</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-medium">Strategy</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-4 py-1.5 rounded-full text-xs font-medium">Development</span>
+</div>
+</div>
+<!-- Description Textarea -->
+<div class="md:col-span-2 bg-surface-container-low p-6 rounded-lg">
+<label class="text-xs font-label uppercase tracking-widest text-on-surface-variant mb-2 block">Description</label>
+<textarea class="bg-transparent border-none text-on-surface w-full p-0 focus:ring-0 resize-none font-body leading-relaxed" placeholder="Start typing your vision..." rows="4">Creating a high-end, editorial productivity environment inspired by the concept of 'Digital Obsidian'. Focused on tonal layering and asymmetrical balance.</textarea>
+</div>
+<!-- Recessed Inputs for Detail -->
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/15 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">calendar_today</span>
+<span class="text-on-surface text-sm font-medium">Deadline</span>
+</div>
+<span class="text-on-surface-variant text-sm">Oct 24, 2023</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-lg border border-outline-variant/15 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary">priority_high</span>
+<span class="text-on-surface text-sm font-medium">Priority</span>
+</div>
+<span class="text-tertiary font-bold text-xs uppercase tracking-tighter">High</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-4 left-1/2 -translate-x-1/2 w-[92%] rounded-[3rem] z-50 bg-[#16172e]/60 backdrop-blur-xl shadow-[0_12px_24px_-4px_rgba(124,77,255,0.08)]">
+<div class="flex justify-around items-center p-2">
+<!-- Tasks Tab -->
+<a class="flex flex-col items-center justify-center text-[#a9a9c2] opacity-70 hover:opacity-100 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">assignment</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Tasks</span>
+</a>
+<!-- Calendar Tab -->
+<a class="flex flex-col items-center justify-center text-[#a9a9c2] opacity-70 hover:opacity-100 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Calendar</span>
+</a>
+<!-- Focus Tab (Active) -->
+<a class="flex flex-col items-center justify-center bg-gradient-to-br from-[#7e51ff] to-[#b6a0ff] text-white rounded-full px-6 py-2 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">adjust</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Focus</span>
+</a>
+<!-- Settings Tab -->
+<a class="flex flex-col items-center justify-center text-[#a9a9c2] opacity-70 hover:opacity-100 active:scale-90 transition-transform" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-['Inter'] text-[11px] font-medium uppercase tracking-wider">Settings</span>
+</a>
+</div>
+</nav>
+</body></html>
